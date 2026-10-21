@@ -62,23 +62,8 @@ h2{font:600 clamp(32px,3.8vw,52px)/1.05 var(--display);color:var(--night);max-wi
 .incl li span{color:var(--steel)}
 
 /* как заказать */
-.how{background:#fff}
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:48px;position:relative}
-.steps::before{content:"";position:absolute;left:0;right:0;top:22px;height:2px;background:repeating-linear-gradient(90deg,var(--night) 0 10px,transparent 10px 20px)}
-.st{position:relative;padding:0 24px 0 0}
-.st b{display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:var(--night);color:var(--amber);font:600 22px var(--display);position:relative}
-.st h3{font:600 22px var(--display);margin:18px 0 6px}
-.st p{color:var(--steel);font-size:16px}
 
 /* услуги */
-.srv{display:grid;grid-template-columns:1.4fr 1fr;gap:20px;margin-top:44px}
-.srv article{border-radius:14px;padding:32px}
-.srv .main{background:var(--night);color:#fff}
-.srv .main h3{font:600 34px var(--display)}
-.srv .main p{margin-top:10px;color:#c8d2ea;max-width:40ch}
-.srv .more{background:#fff;border:1px dashed #9db0d3}
-.srv .more h3{font:600 26px var(--display)}
-.srv .more p{margin-top:10px;color:var(--steel)}
 
 /* связь */
 .contact{background:var(--board);color:#fff}
@@ -91,6 +76,26 @@ h2{font:600 clamp(32px,3.8vw,52px)/1.05 var(--display);color:var(--night);max-wi
 .card .btn{width:100%}
 footer{background:var(--night);color:#98a7c9;padding:28px 0;font-size:14px}
 footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+
+/* два блока на одном экране: как заказать + с чем помогаем */
+.duo{background:#fff;padding:56px 0}
+.duo-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:64px;align-items:start}
+.duo h2{font:600 clamp(28px,3vw,40px)/1.05 var(--display);max-width:none}
+.steps{display:grid;gap:0;margin-top:26px;position:relative}
+.steps::before{content:"";position:absolute;left:22px;top:24px;bottom:34px;width:0;border-left:2px dashed var(--night)}
+.st{position:relative;display:grid;grid-template-columns:46px 1fr;gap:2px 18px;padding-bottom:20px}
+.st:last-child{padding-bottom:0}
+.st b{grid-row:1/3;display:grid;place-items:center;width:46px;height:46px;border-radius:50%;background:var(--night);color:var(--amber);font:600 22px var(--display);position:relative}
+.st h3{font:600 21px var(--display);margin:2px 0 0}
+.st p{color:var(--steel);font-size:16px}
+.srv{display:grid;gap:16px;margin-top:26px}
+.srv article{border-radius:14px;padding:26px 28px}
+.srv .main{background:var(--night);color:#fff}
+.srv .main h3{font:600 30px var(--display)}
+.srv .main p{margin-top:8px;color:#c8d2ea;max-width:42ch}
+.srv .more{background:#fff;border:1px dashed #9db0d3}
+.srv .more h3{font:600 24px var(--display)}
+.srv .more p{margin-top:8px;color:var(--steel)}
 
 @media (max-width:900px){
   .nav{display:none}
@@ -105,10 +110,7 @@ footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
   .row .arrow{display:none}
   section.pad{padding:60px 0}
   .incl,.contact .wrap{grid-template-columns:1fr;gap:32px}
-  .steps{grid-template-columns:1fr;gap:28px}
-  .steps::before{display:none}
-  .st{display:grid;grid-template-columns:46px 1fr;gap:6px 16px;padding:0}
-  .st h3{margin:0}.st p{grid-column:2}
-  .srv{grid-template-columns:1fr}
+  .duo{padding:40px 0}
+  .duo-grid{grid-template-columns:1fr;gap:40px}
 }
 @media (prefers-reduced-motion:reduce){.row{animation:none}*{transition:none!important}}
